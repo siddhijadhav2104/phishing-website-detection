@@ -1,0 +1,317 @@
+[
+  {
+    "url": "https://fb-meta-verified-14259.vercel.app/",
+    "result": "Phishing",
+    "confidence": 77.6,
+    "phishingProbability": 77.6,
+    "timestamp": "2026-09-11T17:05:27.263038+00:00",
+    "indicators": {
+      "urlLength": 42,
+      "https": true,
+      "hasIp": false,
+      "shortener": false,
+      "suspiciousKeywords": 0,
+      "subdomains": 1
+    }
+  },
+  {
+    "url": "https://allxfinity.weebly.com/",
+    "result": "Legitimate",
+    "confidence": 100.0,
+    "phishingProbability": 0.0,
+    "timestamp": "2026-09-11T17:00:38.143709+00:00",
+    "indicators": {
+      "urlLength": 30,
+      "https": true,
+      "hasIp": false,
+      "shortener": false,
+      "suspiciousKeywords": 0,
+      "subdomains": 1
+    }
+  },
+  {
+    "url": "https://www.facebook.com",
+    "result": "Legitimate",
+    "confidence": 100.0,
+    "phishingProbability": 0.0,
+    "timestamp": "2026-09-10T09:38:54.665244+00:00",
+    "indicators": {
+      "urlLength": 24,
+      "https": true,
+      "hasIp": false,
+      "shortener": false,
+      "suspiciousKeywords": 0,
+      "subdomains": 1
+    }
+  },
+  {
+    "url": "https://www.zomato.com",
+    "result": "Legitimate",
+    "confidence": 100.0,
+    "phishingProbability": 0.0,
+    "timestamp": "2026-09-10T09:06:02.232804+00:00",
+    "indicators": {
+      "urlLength": 22,
+      "https": true,
+      "hasIp": false,
+      "shortener": false,
+      "suspiciousKeywords": 0,
+      "subdomains": 1
+    }
+  },
+  {
+    "url": "https://www.linkedin.com",
+    "result": "Legitimate",
+    "confidence": 100.0,
+    "phishingProbability": 0.0,
+    "timestamp": "2026-09-10T09:00:38.078704+00:00",
+    "indicators": {
+      "urlLength": 24,
+      "https": true,
+      "hasIp": false,
+      "shortener": false,
+      "suspiciousKeywords": 0,
+      "subdomains": 1
+    }
+  },
+  {
+    "url": "https://www.linkedin.com",
+    "result": "Legitimate",
+    "confidence": 100.0,
+    "phishingProbability": 0.0,
+    "timestamp": "2026-09-10T07:36:12.820974+00:00",
+    "indicators": {
+      "urlLength": 24,
+      "https": true,
+      "hasIp": false,
+      "shortener": false,
+      "suspiciousKeywords": 0,
+      "subdomains": 1
+    }
+  },
+  {
+    "url": "http://localhost:5173/",
+    "result": "Legitimate",
+    "confidence": 100.0,
+    "phishingProbability": 0.0,
+    "timestamp": "2026-09-10T07:36:00.310056+00:00",
+    "indicators": {
+      "urlLength": 22,
+      "https": false,
+      "hasIp": false,
+      "shortener": false,
+      "suspiciousKeywords": 0,
+      "subdomains": 0
+    }
+  },
+  {
+    "url": "https://www.linkedin.com",
+    "result": "Legitimate",
+    "confidence": 100.0,
+    "phishingProbability": 0.0,
+    "timestamp": "2026-09-10T07:35:40.910399+00:00",
+    "indicators": {
+      "urlLength": 24,
+      "https": true,
+      "hasIp": false,
+      "shortener": false,
+      "suspiciousKeywords": 0,
+      "subdomains": 1
+    }
+  },
+  {
+    "url": "https://github.com/login",
+    "result": "Legitimate",
+    "confidence": 100.0,
+    "phishingProbability": 0.0,
+    "timestamp": "2026-09-07T07:31:24.265391+00:00",
+    "indicators": {
+      "urlLength": 24,
+      "https": true,
+      "hasIp": false,
+      "shortener": false,
+      "suspiciousKeywords": 1,
+      "subdomains": 0
+    }
+  },
+  {
+    "url": "https://github.com/login",
+    "result": "Legitimate",
+    "confidence": 100.0,
+    "phishingProbability": 0.0,
+    "timestamp": "2026-09-07T07:30:14.882338+00:00",
+    "indicators": {
+      "urlLength": 24,
+      "https": true,
+      "hasIp": false,
+      "shortener": false,
+      "suspiciousKeywords": 1,
+      "subdomains": 0
+    }
+  },
+  {
+    "url": "https://www.oracle.com/database/what-is-json/",
+    "result": "Phishing",
+    "confidence": 62.0,
+    "phishingProbability": 62.0,
+    "timestamp": "2026-09-07T07:29:53.117053+00:00",
+    "indicators": {
+      "urlLength": 45,
+      "https": true,
+      "hasIp": false,
+      "shortener": false,
+      "suspiciousKeywords": 0,
+      "subdomains": 1
+    }
+  },
+  {
+    "url": "https://github.com/login",
+    "result": "Legitimate",
+    "confidence": 100.0,
+    "phishingProbability": 0.0,
+    "timestamp": "2026-09-07T07:11:47.308361+00:00",
+    "indicators": {
+      "urlLength": 24,
+      "https": true,
+      "hasIp": false,
+      "shortener": false,
+      "suspiciousKeywords": 1,
+      "subdomains": 0
+    }
+  },
+  {
+    "url": "https://example.com",
+    "result": "Legitimate",
+    "confidence": 100.0,
+    "phishingProbability": 0.0,
+    "timestamp": "2026-09-07T07:05:51.679983+00:00",
+    "indicators": {
+      "urlLength": 19,
+      "https": true,
+      "hasIp": false,
+      "shortener": false,
+      "suspiciousKeywords": 0,
+      "subdomains": 0
+    }
+  },
+  {
+    "url": "https://example.com",
+    "result": "Legitimate",
+    "confidence": 100.0,
+    "phishingProbability": 0.0,
+    "timestamp": "2026-09-06T19:18:57.202004+00:00",
+    "indicators": {
+      "urlLength": 19,
+      "https": true,
+      "hasIp": false,
+      "shortener": false,
+      "suspiciousKeywords": 0,
+      "subdomains": 0
+    }
+  },
+  {
+    "url": "https://example.com",
+    "result": "Legitimate",
+    "confidence": 100.0,
+    "phishingProbability": 0.0,
+    "timestamp": "2026-09-06T19:13:35.582061+00:00",
+    "indicators": {
+      "urlLength": 19,
+      "https": true,
+      "hasIp": false,
+      "shortener": false,
+      "suspiciousKeywords": 0,
+      "subdomains": 0
+    }
+  },
+  {
+    "url": "http://localhost:5173/",
+    "result": "Legitimate",
+    "confidence": 100.0,
+    "phishingProbability": 0.0,
+    "timestamp": "2026-09-06T19:12:45.761605+00:00",
+    "indicators": {
+      "urlLength": 22,
+      "https": false,
+      "hasIp": false,
+      "shortener": false,
+      "suspiciousKeywords": 0,
+      "subdomains": 0
+    }
+  },
+  {
+    "url": "https://amazon.com",
+    "result": "Legitimate",
+    "confidence": 100.0,
+    "phishingProbability": 0.0,
+    "timestamp": "2026-09-06T19:12:30.561303+00:00",
+    "indicators": {
+      "urlLength": 18,
+      "https": true,
+      "hasIp": false,
+      "shortener": false,
+      "suspiciousKeywords": 0,
+      "subdomains": 0
+    }
+  },
+  {
+    "url": "https://example.com",
+    "result": "Legitimate",
+    "confidence": 100.0,
+    "phishingProbability": 0.0,
+    "timestamp": "2026-09-06T19:11:53.070373+00:00",
+    "indicators": {
+      "urlLength": 19,
+      "https": true,
+      "hasIp": false,
+      "shortener": false,
+      "suspiciousKeywords": 0,
+      "subdomains": 0
+    }
+  },
+  {
+    "url": "https://example.com",
+    "result": "Legitimate",
+    "confidence": 100.0,
+    "phishingProbability": 0.0,
+    "timestamp": "2026-09-06T18:56:26.949885+00:00",
+    "indicators": {
+      "urlLength": 19,
+      "https": true,
+      "hasIp": false,
+      "shortener": false,
+      "suspiciousKeywords": 0,
+      "subdomains": 0
+    }
+  },
+  {
+    "url": "https://example.com/login",
+    "result": "Legitimate",
+    "confidence": 100.0,
+    "phishingProbability": 0.0,
+    "timestamp": "2026-09-06T18:00:52.919026+00:00",
+    "indicators": {
+      "urlLength": 25,
+      "https": true,
+      "hasIp": false,
+      "shortener": false,
+      "suspiciousKeywords": 1,
+      "subdomains": 0
+    }
+  },
+  {
+    "url": "https://example.com/login",
+    "result": "Legitimate",
+    "confidence": 100.0,
+    "phishingProbability": 0.0,
+    "timestamp": "2026-09-06T17:43:42.841122+00:00",
+    "indicators": {
+      "urlLength": 25,
+      "https": true,
+      "hasIp": false,
+      "shortener": false,
+      "suspiciousKeywords": 1,
+      "subdomains": 0
+    }
+  }
+]
