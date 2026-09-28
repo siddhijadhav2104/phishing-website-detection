@@ -1,2 +1,19 @@
-backend/venv/
+# Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Node
+node_modules/
 frontend/node_modules/
+
+# Secrets
+.env
+.env.*
+
+# macOS
+.DS_Store
+
+# VS Code
+.vscode/
