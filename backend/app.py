@@ -6,7 +6,7 @@ from datetime import datetime, timezone
 from urllib.parse import urlparse
 
 import joblib
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 
 try:
@@ -17,6 +17,21 @@ except Exception:
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 MODEL_PATH = os.path.join(BASE_DIR, "models", "phishing_model.pkl")
 FALLBACK_PATH = os.path.join(BASE_DIR, "predictions.json")
+
+for env_file in [os.path.join(BASE_DIR, ".env"), os.path.join(BASE_DIR, "..", ".env")]:
+    if os.path.exists(env_file):
+        try:
+            with open(env_file, "r", encoding="utf-8") as f:
+                for line in f:
+                    line = line.strip()
+                    if line and not line.startswith("#") and "=" in line:
+                        k, v = line.split("=", 1)
+                        k = k.strip()
+                        v = v.strip().strip("'\"")
+                        if k not in os.environ:
+                            os.environ[k] = v
+        except Exception:
+            pass
 
 app = Flask(__name__)
 CORS(app)
@@ -87,16 +102,44 @@ def indicator_data(raw_url):
         "subdomains": f[11]
     }
 
+_mongo_client = None
+_mongo_col = None
+
 def get_mongo():
+    global _mongo_client, _mongo_col
     if MongoClient is None:
         return None
-    uri = os.getenv("MONGO_URI", "mongodb://localhost:27017/")
+    if _mongo_col is not None:
+        return _mongo_col
+
+    uri = (
+        os.getenv("MONGO_URI")
+        or os.getenv("MONGO_URL")
+        or os.getenv("MONGODB_URI")
+        or "mongodb://localhost:27017/"
+    )
+    # Strip template angle brackets if user copied <password> from Atlas
+    uri = re.sub(r":<([^@>]+)>@", r":\1@", uri)
+
     try:
-        client = MongoClient(uri, serverSelectionTimeoutMS=800)
+        client = MongoClient(uri, serverSelectionTimeoutMS=5000)
         client.admin.command("ping")
-        db = client[os.getenv("MONGO_DB", "phishing_detector")]
-        return db[os.getenv("MONGO_COLLECTION", "predictions")]
-    except Exception:
+        _mongo_client = client
+
+        db_name = os.getenv("MONGO_DB", "phishing_detector")
+        try:
+            db = client.get_default_database()
+            if db is None:
+                db = client[db_name]
+        except Exception:
+            db = client[db_name]
+
+        col_name = os.getenv("MONGO_COLLECTION", "predictions")
+        _mongo_col = db[col_name]
+        print(f"[MongoDB] Successfully connected to database '{db.name}', collection '{col_name}'")
+        return _mongo_col
+    except Exception as e:
+        print(f"[MongoDB] Connection notice: {e}. Using JSON fallback.")
         return None
 
 def save_record(record):
@@ -178,6 +221,30 @@ def history():
     records, storage = get_history()
     return jsonify({"history": records, "storage": storage})
 
+FRONTEND_DIST = os.path.abspath(os.path.join(BASE_DIR, "..", "frontend", "dist"))
+
+@app.route("/", defaults={"path": ""})
+@app.route("/<path:path>")
+def serve_frontend(path):
+    # Do not intercept API routes
+    if path.startswith("api/") or path == "api":
+        return jsonify({"error": "Endpoint not found"}), 404
+
+    target_file = os.path.join(FRONTEND_DIST, path)
+    if path != "" and os.path.exists(target_file):
+        return send_from_directory(FRONTEND_DIST, path)
+
+    index_file = os.path.join(FRONTEND_DIST, "index.html")
+    if os.path.exists(index_file):
+        return send_from_directory(FRONTEND_DIST, "index.html")
+
+    return jsonify({
+        "status": "ok",
+        "message": "Phishing Website Detection API is running.",
+        "endpoints": ["/api/health", "/api/predict", "/api/history"]
+    })
+
 if __name__ == "__main__":
-    print("Backend running at http://localhost:5000")
-    app.run(host="127.0.0.1", port=5000, debug=False)
+    port = int(os.environ.get("PORT", 5000))
+    print(f"Backend running at http://0.0.0.0:{port}")
+    app.run(host="0.0.0.0", port=port, debug=False)

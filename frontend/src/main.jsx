@@ -3,7 +3,9 @@ import { createRoot } from "react-dom/client";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles.css";
 
-const API = "/api";
+const API = import.meta.env.VITE_API_URL
+  ? `${import.meta.env.VITE_API_URL.replace(/\/+$/, "")}/api`
+  : "/api";
 
 function App() {
   const [url, setUrl] = useState("");
